@@ -12,7 +12,11 @@ import { HEROES } from '../mock-heroes';
 export class HeroesComponent implements OnInit {
 
   heroes = HEROES;
-  selectedHero: Hero | undefined;
+  // Opciones para corregir el error de inicializador no definido correctamente en el constructos:
+  // selectedHero?: Hero;
+  // selectedHero!: Hero;
+  // selectedHero: Hero | undefined;
+  selectedHero?: Hero;
 
   constructor() { }
 
