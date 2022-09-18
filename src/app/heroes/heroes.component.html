@@ -8,7 +8,12 @@
 
 <h2>My Heroes</h2>
 <ul class="heroes">
-    <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)" >
+    <!-- Antiguo li que enseñaba mediante el for los detalles del  -->
+    <!-- <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)" > -->
+
+    <!-- Li nuevo para enrutamiento a detalles de cada heroe según si id -->
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{hero.id}}"></a>
         <span class="badge">{{hero.id}}</span> {{hero.name}}
     </li>
 </ul>
@@ -26,4 +31,5 @@
 
 </div> -->
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!-- Enseña el componente hero-detail.component -->
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->

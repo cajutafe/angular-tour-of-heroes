@@ -20,7 +20,7 @@ export class HeroesComponent implements OnInit {
   // selectedHero?: Hero;
   // selectedHero!: Hero;
   // selectedHero: Hero | undefined;
-  selectedHero?: Hero;
+  // selectedHero?: Hero; //Ya no es necesaria porque lo hacemos mediante enrutamiento a una vista diferente
 
   // hero: Hero = { 
   //   id: 1, 
@@ -31,7 +31,7 @@ export class HeroesComponent implements OnInit {
     //Usamos el contructor para inicializaciones simplres.
     private heroService: HeroService,
     //Añadimos el mensaje de cada vez que se clique en un heroe
-    private messageService: MessageService
+    // private messageService: MessageService //Se enseñará directamente en su url
   ) { }
 
   ngOnInit() {
@@ -39,11 +39,12 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    //Mensaje de cada Heroe seleccionado
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
+  //Ya no se mostrará el heroe seleccionado en las vista principal por lo que el mensaje y el onSelect no son necesarios. 
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  //   //Mensaje de cada Heroe seleccionado
+  //   this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  // }
 
   getHeroes(): void{
     //Llamada sincrona, solo para local lo que si llamaramos de manera remota a un servidor nos tardaría en cargar la página además de no perminitrnos hacer nada en ella.
