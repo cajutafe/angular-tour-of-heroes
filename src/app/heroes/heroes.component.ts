@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 // import { HEROES } from '../mock-heroes'; Ya no es necesaria porque usaremos el servicio HEROSERVICE
 import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
+//Ya se envia el mensaje directamente desde HeroService
+// import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -28,7 +29,7 @@ export class HeroesComponent implements OnInit {
   // };
 
   constructor(
-    //Usamos el contructor para inicializaciones simplres.
+    //Usamos el contructor para inicializaciones simples.
     private heroService: HeroService,
     //Añadimos el mensaje de cada vez que se clique en un heroe
     // private messageService: MessageService //Se enseñará directamente en su url

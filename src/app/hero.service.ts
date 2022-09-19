@@ -21,7 +21,7 @@ export class HeroService {
 
   getHero(id: number): Observable<Hero> {
     //TODO: Envía el mensaje -antes- de hacer el fetch de the heroes
-    const hero = HEROES.find(h => h.id === id)!;
+    const hero = HEROES.find(hero => hero.id === id)!;
     this.messageService.add(`HeroService: fetched hero id=${id}`);
     return of(hero);
   }
